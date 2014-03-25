@@ -42,7 +42,7 @@ class MainPage(Handler):
 
             self.redirect("/")
         else:
-            error = "we need both a title and some artwork!"
+            error = "We need both a title and some artwork!"
             self.render_front(title, art, error)
 
 app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
