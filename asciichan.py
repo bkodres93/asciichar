@@ -1,6 +1,7 @@
 import os
 import webapp2
 import jinja2
+import time
 from google.appengine.ext import db
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -39,7 +40,7 @@ class MainPage(Handler):
         if title and art:
             a = Art(title = title, art = art)
             a.put()
-
+            time.sleep(0.3)
             self.redirect("/")
         else:
             error = "We need both a title and some artwork!"
